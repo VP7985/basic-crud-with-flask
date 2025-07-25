@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Management Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+</head>
+<body class="bg-slate-50" style='font-family: Inter, "Noto Sans", sans-serif;'>
+    <div class="relative flex size-full min-h-screen flex-col">
+        <header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#e7edf4] px-10 py-3">
+            <h2 class="text-[#0d141c] text-lg font-bold leading-tight tracking-[-0.015em]">User Management Dashboard</h2>
+        </header>
+
+        <main class="px-4 md:px-10 lg:px-40 flex flex-1 justify-center py-5">
+            <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
+                <h1 class="text-[#0d141c] tracking-light text-[32px] font-bold leading-tight p-4">Users</h1>
+
+                <form id="user-form" class="space-y-4 px-4 py-3">
+                    <input type="hidden" id="user-id">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <label class="flex flex-col">
+                            <span class="text-[#0d141c] text-base font-medium leading-normal pb-2">Name</span>
+                            <input id="name-input" placeholder="Enter name" class="form-input rounded-lg border-[#cedbe8] h-14" required>
+                        </label>
+                        <label class="flex flex-col">
+                            <span class="text-[#0d141c] text-base font-medium leading-normal pb-2">Email</span>
+                            <input id="email-input" type="email" placeholder="Enter email" class="form-input rounded-lg border-[#cedbe8] h-14" required>
+                        </label>
+                    </div>
+                    <div class="flex items-center space-x-4 pt-2">
+                        <button type="submit" id="submit-button" class="flex items-center justify-center rounded-lg h-10 px-4 bg-[#0c7ff2] text-slate-50 text-sm font-bold">
+                            Submit
+                        </button>
+                        <button type="button" id="cancel-button" class="flex items-center justify-center rounded-lg h-10 px-4 bg-gray-300 text-gray-700 text-sm font-bold" style="display:none;">
+                            Cancel
+                        </button>
+                    </div>
+                </form>
+
+                <div class="px-4 py-3">
+                    <div class="overflow-x-auto rounded-lg border border-[#cedbe8] bg-slate-50">
+                        <table class="w-full">
+                            <thead>
+                                <tr class="bg-slate-100">
+                                    <th class="p-3 text-left text-sm font-medium text-[#0d141c]">Name</th>
+                                    <th class="p-3 text-left text-sm font-medium text-[#0d141c]">Email</th>
+                                    <th class="p-3 text-left text-sm font-medium text-[#0d141c]">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="user-table-body">
+                                </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
