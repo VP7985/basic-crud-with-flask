@@ -1,0 +1,11 @@
+/* Custom styles to improve the user experience */
+body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Make the Edit and Delete buttons more interactive */
+.edit-btn:hover, .delete-btn:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
