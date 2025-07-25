@@ -37,8 +37,8 @@ To get this project up and running on your local machine, follow these steps.
 
 1.  **Clone the repository:**
     ```bash
-    git clone <your-repository-url>
-    cd <your-project-directory>
+    git clone https://github.com/VP7985/basic-crud-with-flask.git
+    cd basic-crud-with-flask
     ```
 
 2.  **Create and activate a virtual environment (recommended):**
